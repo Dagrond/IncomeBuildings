@@ -1,1 +1,11 @@
-version: "Wersja: "
+
+#colors...
+prefix: "&5[&6Income&2Buildings&5] "
+message_color: "&r&e"
+message_variable_color: "&a&l"
+error_color: "&r&c"
+error_variable_color: "&4&l"
+
+#messages...
+#DO NOT TOUCH: %1, %2, %3 etc. - this is space for variables :)
+version: "Wersja: %1"

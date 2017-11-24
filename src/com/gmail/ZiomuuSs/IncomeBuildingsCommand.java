@@ -4,6 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import static com.gmail.ZiomuuSs.Utils.UsefulTools.getMsg;
+
 public class IncomeBuildingsCommand implements CommandExecutor {
   
   IncomeBuildings plugin;
@@ -15,7 +17,7 @@ public class IncomeBuildingsCommand implements CommandExecutor {
     if (cmd.getName().equalsIgnoreCase("IncomeBuildings") || cmd.getName().equalsIgnoreCase("ib")) {
       if (args.length != 0) {
         if (args[0].equalsIgnoreCase("version")) {
-          sender.sendMessage("IncomeBuildings wersja: v0.1");
+          sender.sendMessage(getMsg("version", "v0.1"));
           return true;
         }
       } else {
