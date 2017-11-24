@@ -1,5 +1,6 @@
 package com.gmail.ZiomuuSs.Utils;
 
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public final class UsefulTools {
@@ -16,18 +17,22 @@ public final class UsefulTools {
   }
 
   public static String getMsg (String path, String...opt) {
-    String msg = msgConfig.getString("prefix")+msgConfig.getString("path");
+    String msg = msgConfig.getString("prefix")+msgConfig.getString(path);
     if (path.contains("error_")) {
       msg += msgConfig.getString("error_color");
-      /*for (int i = opt.length; i==0; --i) {
-        msg.replaceAll("%"+i, msgConfig.getString("error_variable_color")+opt[i]+msgConfig.getString("error_color"));
-      }*/
+      if (opt.length > 0) {
+        for (int i = 0; i==opt.length; i++) {
+          msg.replaceAll("%"+(i+1), msgConfig.getString("error_variable_color")+opt[i]+msgConfig.getString("error_color"));
+        }
+      }
     } else {
       msg += msgConfig.getString("message_color");
-      /*for (int i = opt.length; i==0; --i) {
-        msg.replaceAll("%"+i, msgConfig.getString("message_variable_color")+opt[i]+msgConfig.getString("message_color"));
-      }*/
+      if (opt.length > 0) {
+        for (int i = 0; i==opt.length; i++) {
+          msg.replaceAll("%"+(i+1), msgConfig.getString("message_variable_color")+opt[i]+msgConfig.getString("error_color"));
+        }
+      }
     }
-    return msg;
+    return ChatColor.translateAlternateColorCodes('&', msg);
   }
 }
