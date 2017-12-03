@@ -21,7 +21,7 @@ public class IncomeBuildingsCommand implements CommandExecutor {
           return true;
         }
       } else {
-        sender.sendMessage("Tutaj bedzie error ze trzeba podac argument czy costam");
+        sender.sendMessage(getMsg("error_no_argument"));
         return true;
       }
     }

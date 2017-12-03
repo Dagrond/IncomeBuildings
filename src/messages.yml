@@ -8,4 +8,6 @@ error_variable_color: "&4&l"
 
 #messages...
 #DO NOT TOUCH: %1, %2, %3 etc. - this is space for variables :)
+#use %s to set color of message to color that is reserved for variables (see colors section), use %n to return color back to normal.
 version: "Wersja: %1"
+error_no_argument: "Nieprawidlowa komenda! Wpisz %s/ib help%n aby zobaczyc liste komend."
