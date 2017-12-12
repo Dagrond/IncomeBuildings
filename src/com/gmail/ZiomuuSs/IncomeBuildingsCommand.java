@@ -54,12 +54,16 @@ public class IncomeBuildingsCommand implements CommandExecutor {
             return true;
           }
         } else if (args[0].equalsIgnoreCase("list")) {
-          if (sender instanceof Player && !sender.hasPermission("IncomeBuildings.list")) {
-            //tralala
+          if (sender instanceof Player && !sender.hasPermission("IncomeBuildings.list") && !sender.hasPermission("IncomeBuildings.*")) {
+            //list of player's buildings
             return true;
           } else {
-            sender.sendMessage("Lista: "+getData().toString());
-            return true;
+            if (args.length == 0) {
+              sender.sendMessage("Temp list: "+getData().toString());
+              return true;
+            } else {
+              //list of someone's buildings
+            }
           }
         }
       } else {

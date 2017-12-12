@@ -4,5 +4,5 @@ version: 0.1
 commands:
    IncomeBuildings:
       aliases: [ib]
-      description: Glowna komenda.
+      description: Main command.
       usage: /ib

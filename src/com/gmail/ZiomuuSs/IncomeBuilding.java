@@ -21,7 +21,10 @@ public class IncomeBuilding {
     this.owner = owner;
     this.time = System.currentTimeMillis();
   }
+
   
+
+//Getters & Setters
   public String getName() {
     return name;
   }
@@ -37,5 +40,4 @@ public class IncomeBuilding {
   public String getRegion() {
     return region;
   }
-  
 }
