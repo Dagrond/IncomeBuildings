@@ -1,5 +1,5 @@
 name: IncomeBuildings
-main: com.gmail.ZiomuuSs.IncomeBuildings
+main: com.gmail.ZiomuuSs.Main
 version: 0.1
 commands:
    IncomeBuildings:

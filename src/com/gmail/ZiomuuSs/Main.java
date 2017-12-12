@@ -6,7 +6,7 @@ import com.gmail.ZiomuuSs.Utils.ConfigAccessor;
 import static com.gmail.ZiomuuSs.Utils.UsefulTools.loadData;
 import static com.gmail.ZiomuuSs.Utils.UsefulTools.sendAccessors;
 
-public final class IncomeBuildings extends JavaPlugin {
+public final class Main extends JavaPlugin {
   private ConfigAccessor messagesAccessor = new ConfigAccessor(this, "messages.yml");
   private ConfigAccessor dataAccessor = new ConfigAccessor(this, "data.yml");
   
@@ -15,7 +15,7 @@ public final class IncomeBuildings extends JavaPlugin {
     messagesAccessor.saveDefaultConfig();
     dataAccessor.saveDefaultConfig();
     saveDefaultConfig();
-    sendAccessors(messagesAccessor, dataAccessor);
+    sendAccessors(messagesAccessor, dataAccessor, this);
     loadData(dataAccessor.getConfig());
   }
   

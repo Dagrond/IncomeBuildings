@@ -1,5 +1,5 @@
-
 #colors...
+#If you don't want to use it, just leave: ""
 prefix: "&5[&6Income&2Buildings&5] "
 message_color: "&r&e"
 message_variable_color: "&a&l"
@@ -8,6 +8,14 @@ error_variable_color: "&4&l"
 
 #messages...
 #DO NOT TOUCH: %1, %2, %3 etc. - this is space for variables :)
-#use %s to set color of message to color that is reserved for variables (see colors section), use %n to return color back to normal.
+#Use %s to set color of message to color that is reserved for variables (see colors section), use %n to return color back to normal.
+#Variables are colored automatically (colors section above to change colors of it or completely remove  
+#You can also use standard minecraft colors (&1, &2, &c, etc.), but it's better to use colors section (so you don't have to edit all messages when you want to change colors)
 version: "Wersja: %1"
+successfully_created: "Pomyslnie utworzono budynek o nazwie %1!"
 error_no_argument: "Nieprawidlowa komenda! Wpisz %s/ib help%n aby zobaczyc liste komend."
+error_player_required: "Ta komenda moze byc uzyta tylko przez gracza!"
+error_permission: "Nie posiadasz odpowiednich uprawnien aby uzyc tej komendy!"
+error_no_region: "Region o nazwie %1 nie istnieje!"
+error_use: "Poprawne uzycie: %1"
+error_exist: "Budynek o takiej samej nazwie lub takim samym regionie juz istnieje!"
