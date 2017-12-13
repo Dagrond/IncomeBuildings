@@ -11,20 +11,32 @@ public class IncomeBuilding {
   protected World world; //world of that region
   protected long time; //date (in milis) of last income (to region's account)
   protected int account; //current balance of that region
-  protected int maxaccount; //max balance of that region
+  protected int maxAccount; //max balance of that region
   Main plugin; //instance of main
   
-  public IncomeBuilding (Main instance, String region, World world, String name, UUID owner) {
+  public IncomeBuilding (Main instance, String region, World world, String name) {
     plugin = instance;
     this.region = region;
     this.name = name;
-    this.owner = owner;
+    this.world = world;
+    this.maxAccount = 10000;
     this.time = System.currentTimeMillis();
   }
 
   
 
-//Getters & Setters
+  public int getAccount() {
+    return account;
+  }
+
+  public int getMaxAccount() {
+    return maxAccount;
+  }
+
+  public long nextIncome() {
+    return System.currentTimeMillis()-time;
+  }
+
   public String getName() {
     return name;
   }
