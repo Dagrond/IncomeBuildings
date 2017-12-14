@@ -57,6 +57,26 @@ public class IncomeBuildingsCommand implements CommandExecutor {
             sender.sendMessage(getMsg("error_player_required"));
             return true;
           }
+        } else if (args[0].equalsIgnoreCase("setowner")) {
+        	if (sender.hasPermission("IncomeBuildings.setowner") || sender.hasPermission("IncomeBuildings.*")) {
+        		if (args.length > 2) {
+        			if (getBuilding(args[2]) != null) {
+        			  Player player = (Player) sender;
+        			  getBuilding(args[2]).setOwner(player.getUniqueId());
+        			  sender.sendMessage(getMsg("set_owner", args[1], args[2]));
+        			  return true;
+        			} else {
+        				sender.sendMessage(getMsg("error_no_building", args[2]));
+        				return true;
+        			}
+        		} else {
+        			sender.sendMessage(getMsg("error_use", "/ib setowner <player> <name>"));
+        			return true;
+        		}
+        	} else {
+        		sender.sendMessage(getMsg("error_permission"));
+        		return true;
+        	}
         } else if (args[0].equalsIgnoreCase("info")) {
           if (sender instanceof Player && !sender.hasPermission("IncomeBuildings.list") && !sender.hasPermission("IncomeBuildings.*")) {
             Player player = (Player) sender;
@@ -86,8 +106,8 @@ public class IncomeBuildingsCommand implements CommandExecutor {
                   sender.sendMessage(getMsg("info_region", getSimpleMsg("none")));
                 else
                   sender.sendMessage(getMsg("info_region", prop.getRegion(), prop.getWorld().toString()));
-                int hours = Math.toIntExact(prop.nextIncome()/60/60/60);
-                int minutes = Math.toIntExact((prop.nextIncome()/60/60)%60/10);
+                int hours = Math.toIntExact((prop.nextIncome()/1000)/3600);
+                int minutes = Math.toIntExact((prop.nextIncome()/1000)%3600);
                 sender.sendMessage(getMsg("info_next_income", Integer.toString(hours), Integer.toString(minutes)));
                 sender.sendMessage(getMsg("info_account", Integer.toString(prop.getAccount()), Integer.toString(prop.getMaxAccount())));
                 return true;

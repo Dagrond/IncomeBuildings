@@ -19,11 +19,13 @@ public class IncomeBuilding {
     this.region = region;
     this.name = name;
     this.world = world;
-    this.maxAccount = 10000;
+    this.maxAccount = 15000;
     this.time = System.currentTimeMillis();
   }
-
   
+  public void setOwner(UUID player) {
+	this.owner = player;
+  }
 
   public int getAccount() {
     return account;

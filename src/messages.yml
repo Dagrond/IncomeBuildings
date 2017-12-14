@@ -25,6 +25,7 @@ info_region: "Region: %1 (Swiat: %2)"
 info_next_income: "Kolejny przyplyw za %1 godzin %2 minut"
 info_account: "Konto: %1/%2"
 info_owner: "Wlasciciel: %1"
+set_owner: "Pomyslnie zmieniono wlasciciela budynku %1 na %2"
 
 #Simple messages
 #(Messages that are used instead of variables in some situations)
